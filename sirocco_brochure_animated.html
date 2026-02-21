@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sirocco Forum — Partnership Brochure 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0f2137;
+  --navy-mid: #1b3a5c;
+  --orange: #e8671a;
+  --orange-light: #f4894a;
+  --sand: #f5ede0;
+  --sand-dark: #e8d9c4;
+  --cream: #faf7f2;
+  --gray: #6b7280;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family:'Outfit',sans-serif; background:#e8d9c4; color:var(--navy); }
+
+.progress-bar {
+  position:fixed; top:0; left:0; height:3px;
+  background:linear-gradient(to right, var(--orange), var(--orange-light));
+  width:0%; z-index:9999; transition:width 0.1s linear;
+  box-shadow: 0 0 8px rgba(232,103,26,0.5);
+}
+
+.page { width:210mm; min-height:297mm; margin:0 auto 8mm; background:var(--cream); position:relative; overflow:hidden; }
+
+/* COVER */
+.cover { background:var(--navy); display:flex; flex-direction:column; justify-content:space-between; min-height:297mm; }
+.cover-bg { position:absolute; inset:0; overflow:hidden; }
+.cover-bg::before { content:''; position:absolute; top:-60px; right:-60px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(232,103,26,0.18) 0%, transparent 70%); }
+.cover-bg::after { content:''; position:absolute; bottom:80px; left:-80px; width:350px; height:350px; border-radius:50%; background:radial-gradient(circle, rgba(232,103,26,0.10) 0%, transparent 70%); }
+.cover-lines { position:absolute; top:0; left:0; right:0; bottom:0; background-image:linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px); background-size:40px 40px; }
+.orb { position:absolute; border-radius:50%; pointer-events:none; animation:float 8s ease-in-out infinite; }
+.orb-1 { width:300px; height:300px; top:10%; right:-80px; background:radial-gradient(circle, rgba(232,103,26,0.12) 0%, transparent 70%); animation-delay:0s; }
+.orb-2 { width:200px; height:200px; bottom:20%; left:-60px; background:radial-gradient(circle, rgba(100,150,220,0.10) 0%, transparent 70%); animation-delay:-3s; }
+.orb-3 { width:150px; height:150px; top:50%; left:30%; background:radial-gradient(circle, rgba(232,103,26,0.07) 0%, transparent 70%); animation-delay:-5s; }
+@keyframes float { 0%,100% { transform:translateY(0) scale(1); } 33% { transform:translateY(-18px) scale(1.04); } 66% { transform:translateY(10px) scale(0.97); } }
+
+.cover-top { position:relative; padding:14mm 14mm 0; display:flex; justify-content:space-between; align-items:flex-start; z-index:2; }
+.cover-logo-text { font-family:'Outfit',sans-serif; font-weight:500; font-size:10px; letter-spacing:3px; color:rgba(255,255,255,0.45); text-transform:uppercase; }
+.cover-year { font-family:'Outfit',sans-serif; font-weight:300; font-size:10px; letter-spacing:2px; color:rgba(255,255,255,0.35); }
+.cover-center { position:relative; z-index:2; padding:0 14mm; flex:1; display:flex; flex-direction:column; justify-content:center; }
+.wind-line { width:0; height:2px; background:var(--orange); margin-bottom:10mm; transition:width 1s cubic-bezier(0.22,1,0.36,1) 0.3s; }
+.loaded .wind-line { width:48px; }
+.cover-the { font-family:'Outfit',sans-serif; font-weight:300; font-size:13px; letter-spacing:6px; color:rgba(255,255,255,0.5); text-transform:uppercase; margin-bottom:4mm; opacity:0; transform:translateY(10px); transition:opacity 0.6s ease 0.55s, transform 0.6s ease 0.55s; }
+.loaded .cover-the { opacity:1; transform:none; }
+.cover-title { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:68px; line-height:0.95; color:#fff; margin-bottom:6mm; letter-spacing:-1px; opacity:0; transform:translateY(20px); transition:opacity 0.8s cubic-bezier(0.22,1,0.36,1) 0.7s, transform 0.8s cubic-bezier(0.22,1,0.36,1) 0.7s; }
+.loaded .cover-title { opacity:1; transform:none; }
+.cover-title span { color:var(--orange); }
+.cover-subtitle { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:20px; color:rgba(255,255,255,0.55); margin-bottom:10mm; line-height:1.4; opacity:0; transform:translateY(15px); transition:opacity 0.7s ease 1s, transform 0.7s ease 1s; }
+.loaded .cover-subtitle { opacity:1; transform:none; }
+.cover-divider { width:0; height:1px; background:linear-gradient(to right, var(--orange), transparent); margin-bottom:8mm; transition:width 0.9s cubic-bezier(0.22,1,0.36,1) 1.2s; }
+.loaded .cover-divider { width:100%; }
+.cover-pillars { display:flex; gap:6mm; flex-wrap:wrap; opacity:0; transform:translateY(10px); transition:opacity 0.6s ease 1.4s, transform 0.6s ease 1.4s; }
+.loaded .cover-pillars { opacity:1; transform:none; }
+.cover-pill { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:40px; padding:3px 14px; font-family:'Outfit',sans-serif; font-size:9px; font-weight:400; letter-spacing:1.5px; color:rgba(255,255,255,0.55); text-transform:uppercase; }
+.cover-bottom { position:relative; z-index:2; padding:10mm 14mm 12mm; display:flex; justify-content:space-between; align-items:flex-end; border-top:1px solid rgba(255,255,255,0.08); opacity:0; transition:opacity 0.8s ease 1.6s; }
+.loaded .cover-bottom { opacity:1; }
+.cover-event-info p { font-family:'Outfit',sans-serif; font-size:10px; color:rgba(255,255,255,0.4); letter-spacing:1px; line-height:1.8; }
+.cover-event-info strong { color:rgba(255,255,255,0.7); font-weight:500; }
+.cover-badge { background:var(--orange); padding:6px 14px; border-radius:4px; }
+.cover-badge p { font-family:'Outfit',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; color:white; text-transform:uppercase; }
+
+/* PAGE STRUCTURE */
+.page-header { background:var(--navy); padding:8mm 14mm; display:flex; justify-content:space-between; align-items:center; position:relative; overflow:hidden; }
+.page-header::after { content:''; position:absolute; bottom:0; left:-100%; width:100%; height:2px; background:var(--orange); animation:slide-in 0.8s cubic-bezier(0.22,1,0.36,1) forwards 0.3s; }
+@keyframes slide-in { to { left:0; } }
+.page-header-title { font-family:'Outfit',sans-serif; font-size:9px; font-weight:500; letter-spacing:3px; color:rgba(255,255,255,0.45); text-transform:uppercase; }
+.page-header-num { font-family:'Cormorant Garamond',serif; font-size:13px; color:var(--orange); }
+.page-body { padding:12mm 14mm; }
+
+/* TYPOGRAPHY */
+.section-label { font-family:'Outfit',sans-serif; font-size:8px; font-weight:600; letter-spacing:3px; color:var(--orange); text-transform:uppercase; margin-bottom:3mm; }
+.section-title { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:36px; color:var(--navy); line-height:1.05; margin-bottom:6mm; }
+.section-body { font-family:'Outfit',sans-serif; font-size:10.5px; font-weight:300; color:#4a5568; line-height:1.75; margin-bottom:5mm; }
+
+/* SCROLL REVEAL */
+.reveal { opacity:0; transform:translateY(28px); transition:opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
+.reveal.visible { opacity:1; transform:none; }
+.reveal-left { opacity:0; transform:translateX(-28px); transition:opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
+.reveal-left.visible { opacity:1; transform:none; }
+
+/* COMPONENTS */
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:8mm; margin-top:8mm; }
+.accent-block { background:var(--navy); padding:7mm; border-radius:6px; }
+.accent-block .section-label { color:var(--orange); }
+.accent-block .section-title { color:white; font-size:22px; margin-bottom:4mm; }
+.accent-block .section-body { color:rgba(255,255,255,0.6); margin-bottom:0; }
+
+.stat-row { display:flex; gap:6mm; margin-top:8mm; }
+.stat-box { flex:1; border-top:2px solid var(--orange); padding-top:4mm; transition:transform 0.3s ease; }
+.stat-box:hover { transform:translateY(-3px); }
+.stat-num { font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:700; color:var(--navy); line-height:1; transition:color 0.3s ease; }
+.stat-box:hover .stat-num { color:var(--orange); }
+.stat-label { font-family:'Outfit',sans-serif; font-size:9px; font-weight:400; color:var(--gray); margin-top:2mm; letter-spacing:0.5px; line-height:1.4; }
+
+.pillars-hero { padding:6mm 8mm; background:var(--sand); border-radius:6px; }
+.pillar-cards { display:flex; flex-direction:column; gap:4mm; margin-top:8mm; }
+.pillar-card { display:grid; grid-template-columns:14mm 1fr; gap:5mm; align-items:start; padding:6mm; border-radius:6px; border:1px solid rgba(15,33,55,0.08); background:white; transition:transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease, border-color 0.3s ease; cursor:default; }
+.pillar-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(15,33,55,0.12); border-color:var(--orange); }
+.pillar-num { font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:700; color:var(--orange); line-height:1; }
+.pillar-title { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:700; color:var(--navy); margin-bottom:2mm; }
+.pillar-body { font-family:'Outfit',sans-serif; font-size:9.5px; font-weight:300; color:#4a5568; line-height:1.65; }
+.pillar-tags { display:flex; gap:2mm; flex-wrap:wrap; margin-top:3mm; }
+.pillar-tag { background:var(--sand); border-radius:20px; padding:2px 8px; font-size:8px; font-weight:500; color:var(--navy); letter-spacing:0.5px; transition:background 0.2s ease, color 0.2s ease; cursor:default; }
+.pillar-tag:hover { background:var(--orange); color:white; }
+
+.audience-grid { display:grid; grid-template-columns:1fr 1fr; gap:4mm; margin-top:8mm; }
+.audience-card { background:white; border:1px solid var(--sand-dark); border-radius:6px; padding:6mm; position:relative; transition:transform 0.3s ease, box-shadow 0.3s ease; }
+.audience-card::before { content:''; position:absolute; top:0; left:0; width:3px; height:100%; background:var(--orange); border-radius:6px 0 0 6px; }
+.audience-card:hover { transform:translateY(-4px); box-shadow:0 10px 30px rgba(15,33,55,0.10); }
+.audience-icon { font-size:20px; margin-bottom:3mm; }
+.audience-title { font-family:'Cormorant Garamond',serif; font-size:15px; font-weight:700; color:var(--navy); margin-bottom:2mm; }
+.audience-desc { font-family:'Outfit',sans-serif; font-size:9px; font-weight:300; color:var(--gray); line-height:1.6; }
+
+.quote-block { margin-top:8mm; background:var(--navy); border-radius:6px; padding:8mm; }
+.quote-mark { font-family:'Cormorant Garamond',serif; font-size:60px; color:var(--orange); line-height:0.6; margin-bottom:3mm; display:block; }
+.quote-text { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:16px; color:white; line-height:1.5; margin-bottom:4mm; }
+.quote-attr { font-family:'Outfit',sans-serif; font-size:9px; font-weight:400; color:var(--orange); letter-spacing:1px; }
+
+.tier-cards { display:flex; flex-direction:column; gap:4mm; margin-top:8mm; }
+.tier-card { display:grid; grid-template-columns:28mm 1fr auto; gap:5mm; align-items:center; border-radius:6px; overflow:hidden; border:1px solid var(--sand-dark); transition:transform 0.3s ease, box-shadow 0.3s ease; }
+.tier-card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(15,33,55,0.10); }
+.tier-label-col { padding:6mm 5mm; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; min-height:24mm; }
+.tier-name { font-family:'Outfit',sans-serif; font-size:8px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:white; margin-bottom:2mm; }
+.tier-amount { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:700; color:white; line-height:1; }
+.tier-founding .tier-label-col { background:var(--navy); }
+.tier-supporting .tier-label-col { background:#2a5298; }
+.tier-institutional .tier-label-col { background:#c55a11; }
+.tier-media .tier-label-col { background:#4a5568; }
+.tier-benefits { padding:5mm 0; }
+.tier-benefit { font-family:'Outfit',sans-serif; font-size:9px; font-weight:300; color:#4a5568; line-height:1.8; display:flex; align-items:flex-start; gap:2mm; }
+.tier-benefit::before { content:'→'; color:var(--orange); font-size:9px; flex-shrink:0; margin-top:1px; }
+.tier-targets { padding:5mm; min-width:38mm; border-left:1px solid var(--sand-dark); }
+.tier-targets-label { font-family:'Outfit',sans-serif; font-size:7px; font-weight:600; letter-spacing:1.5px; color:var(--orange); text-transform:uppercase; margin-bottom:2mm; }
+.tier-target { font-family:'Outfit',sans-serif; font-size:8.5px; font-weight:300; color:var(--navy); line-height:1.7; }
+
+.program-table { width:100%; border-collapse:collapse; margin-top:6mm; }
+.program-table th { background:var(--navy); color:white; font-family:'Outfit',sans-serif; font-size:8px; font-weight:600; letter-spacing:2px; text-transform:uppercase; padding:4mm 5mm; text-align:left; }
+.program-table td { font-family:'Outfit',sans-serif; font-size:9.5px; font-weight:300; color:#4a5568; padding:4mm 5mm; border-bottom:1px solid var(--sand-dark); vertical-align:top; line-height:1.5; transition:background 0.2s ease; }
+.program-table tr:nth-child(even) td { background:var(--cream); }
+.program-table tbody tr:hover td { background:#fff5ee !important; }
+.time-col { color:var(--orange); font-weight:500; white-space:nowrap; }
+.session-col { font-weight:500; color:var(--navy); }
+
+.contact-page { background:var(--navy); min-height:297mm; display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; }
+.contact-page::before { content:''; position:absolute; top:-100px; right:-100px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle, rgba(232,103,26,0.15) 0%, transparent 65%); pointer-events:none; }
+.contact-page::after { content:''; position:absolute; bottom:-80px; left:-80px; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle, rgba(232,103,26,0.08) 0%, transparent 65%); pointer-events:none; }
+.contact-top { position:relative; z-index:2; padding:14mm 14mm 0; }
+.contact-pre { font-family:'Outfit',sans-serif; font-size:9px; font-weight:500; letter-spacing:3px; color:var(--orange); text-transform:uppercase; margin-bottom:4mm; }
+.contact-title { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:48px; color:white; line-height:1.05; margin-bottom:6mm; }
+.contact-body { font-family:'Outfit',sans-serif; font-size:11px; font-weight:300; color:rgba(255,255,255,0.55); line-height:1.7; max-width:130mm; margin-bottom:10mm; }
+.contact-divider { width:100%; height:1px; background:rgba(255,255,255,0.1); margin:8mm 0; }
+.contact-cards { display:grid; grid-template-columns:1fr 1fr; gap:4mm; position:relative; z-index:2; padding:0 14mm; }
+.contact-card { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:6mm; transition:background 0.3s ease, border-color 0.3s ease, transform 0.3s ease; }
+.contact-card:hover { background:rgba(255,255,255,0.10); border-color:var(--orange); transform:translateY(-2px); }
+.contact-card-label { font-family:'Outfit',sans-serif; font-size:7px; font-weight:600; letter-spacing:2px; color:var(--orange); text-transform:uppercase; margin-bottom:3mm; }
+.contact-card-value { font-family:'Outfit',sans-serif; font-size:11px; font-weight:400; color:white; line-height:1.6; }
+.contact-bottom { position:relative; z-index:2; padding:10mm 14mm 12mm; border-top:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; }
+.contact-brand { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:700; color:white; }
+.contact-brand span { color:var(--orange); }
+.contact-tagline { font-family:'Outfit',sans-serif; font-size:9px; font-weight:300; color:rgba(255,255,255,0.35); letter-spacing:0.5px; }
+
+.cursor-glow { position:fixed; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle, rgba(232,103,26,0.08) 0%, transparent 70%); pointer-events:none; transform:translate(-50%,-50%); transition:opacity 0.3s ease; z-index:1; opacity:0; }
+
+@media print { body { background:white; } .page { margin:0; page-break-after:always; } .progress-bar,.cursor-glow { display:none; } }
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- PAGE 1: COVER -->
+<div class="page cover" id="cover">
+  <div class="cover-bg"></div>
+  <div class="cover-lines"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="cover-top">
+    <div class="cover-logo-text">The Sirocco Forum</div>
+    <div class="cover-year">Warsaw · 2026</div>
+  </div>
+  <div class="cover-center">
+    <div class="wind-line"></div>
+    <div class="cover-the">The</div>
+    <div class="cover-title">Sirocco<br><span>Forum</span></div>
+    <div class="cover-subtitle">Where Africa's Energy<br>Meets Europe's Future</div>
+    <div class="cover-divider"></div>
+    <div class="cover-pillars">
+      <div class="cover-pill">Energy Transition</div>
+      <div class="cover-pill">Trade &amp; Investment</div>
+      <div class="cover-pill">Digital Economy</div>
+      <div class="cover-pill">Youth Integration</div>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-event-info">
+      <p><strong>Date</strong> &nbsp; Thursday, June 18, 2026</p>
+      <p><strong>Venue</strong> &nbsp; Natolin Campus, College of Europe — Warsaw, Poland</p>
+      <p><strong>Format</strong> &nbsp; Exclusive Invitation-Only Forum · 60–80 VIP Guests</p>
+    </div>
+    <div class="cover-badge">
+      <p>Partnership &amp; Sponsorship</p>
+      <p style="margin-top:2px;font-size:8px;opacity:0.8;">Prospectus 2026</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2: ABOUT -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-title">About the Forum</div>
+    <div class="page-header-num">01</div>
+  </div>
+  <div class="page-body">
+    <div class="section-label reveal">The Concept</div>
+    <div class="section-title reveal">A wind that has always connected two worlds</div>
+    <div class="section-body reveal">The Sirocco is a wind born deep in the Sahara Desert. It travels north across the Mediterranean Sea and arrives on the shores of Europe — crossing borders, carrying warmth, and connecting two worlds long before any diplomatic channel existed. It has done this for thousands of years.</div>
+    <div class="section-body reveal">The Sirocco Forum carries the same logic. It is a boutique, invitation-only annual platform that brings together leaders from the EU, the Mediterranean basin, and Africa around three themes that will define the next decade: energy transition, trade and investment, and the digital economy. Youth is not a side event — young professionals are seated at every panel table alongside ambassadors and senior leaders.</div>
+    <div class="two-col reveal">
+      <div>
+        <div class="section-label">Why Warsaw?</div>
+        <div class="section-body" style="margin-top:2mm;">Poland is the 5th largest economy in the EU and a rising hub for energy policy, agri-tech, and defence. While Western Europe has established channels with North Africa and the Mediterranean, Central and Eastern Europe remains an untapped partner. The Sirocco Forum activates this connection from one of Europe's most prestigious academic campuses.</div>
+      </div>
+      <div class="accent-block">
+        <div class="section-label">Why Now?</div>
+        <div class="section-title" style="font-size:22px;margin-top:2mm;">A gap no other platform fills</div>
+        <div class="section-body">No existing European forum places Central Europe, the Mediterranean, and Africa in the same conversation. The Sirocco Forum is the first platform to do so.</div>
+      </div>
+    </div>
+    <div class="stat-row reveal">
+      <div class="stat-box"><div class="stat-num">60–80</div><div class="stat-label">VIP guests<br>by invitation only</div></div>
+      <div class="stat-box"><div class="stat-num">3</div><div class="stat-label">Blocs represented<br>EU · Mediterranean · Africa</div></div>
+      <div class="stat-box"><div class="stat-num">20%</div><div class="stat-label">Seats reserved<br>for under-35s</div></div>
+      <div class="stat-box"><div class="stat-num">June<br><span style="font-size:22px;">18</span></div><div class="stat-label">Warsaw, Poland<br>2026</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3: PILLARS -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-title">The Three Pillars</div>
+    <div class="page-header-num">02</div>
+  </div>
+  <div class="page-body" style="padding-top:8mm;">
+    <div class="pillars-hero reveal">
+      <div class="section-label">Forum Agenda</div>
+      <div class="section-title" style="font-size:28px;margin-bottom:2mm;">Three conversations. One room. Real outcomes.</div>
+      <div class="section-body" style="margin-bottom:0;">Each panel is structured for discussion, not presentations. Youth voices sit alongside senior figures. Outcomes feed into the Joint Communiqué distributed after the event.</div>
+    </div>
+    <div class="pillar-cards">
+      <div class="pillar-card">
+        <div class="pillar-num">I</div>
+        <div>
+          <div class="pillar-title">Energy &amp; The Green Transition</div>
+          <div class="pillar-body">North Africa holds some of the world's greatest solar and wind potential. Central Europe urgently needs to diversify its energy supply. This panel explores how the EU, the Mediterranean, and Africa can build a shared energy architecture — from LNG supply today to green hydrogen infrastructure tomorrow.</div>
+          <div class="pillar-tags"><span class="pillar-tag">Green Hydrogen</span><span class="pillar-tag">LNG Supply</span><span class="pillar-tag">SoutH2 Corridor</span><span class="pillar-tag">Energy Sovereignty</span><span class="pillar-tag" style="background:#fff0e8;color:var(--orange);">Young Energy Professionals</span></div>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">II</div>
+        <div>
+          <div class="pillar-title">Trade, Investment &amp; The African Market</div>
+          <div class="pillar-body">The African Continental Free Trade Area (AfCFTA) is the largest free trade zone in the world by number of countries. This panel examines concrete business opportunities for European companies seeking African market access, and for African investors seeking European technology and capital.</div>
+          <div class="pillar-tags"><span class="pillar-tag">AfCFTA</span><span class="pillar-tag">B2B Matchmaking</span><span class="pillar-tag">Diaspora Economy</span><span class="pillar-tag">SME Partnerships</span><span class="pillar-tag" style="background:#fff0e8;color:var(--orange);">Young Entrepreneurs</span></div>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">III</div>
+        <div>
+          <div class="pillar-title">Digital Economy &amp; Technology Transfer</div>
+          <div class="pillar-body">From data infrastructure to startup ecosystems, the digital economy is the fastest-growing arena for Euro-African cooperation. This panel discusses digital sovereignty, critical raw materials, cybersecurity cooperation, and how African startups and European tech firms can build lasting joint ventures.</div>
+          <div class="pillar-tags"><span class="pillar-tag">Digital Sovereignty</span><span class="pillar-tag">Critical Raw Materials</span><span class="pillar-tag">Startups</span><span class="pillar-tag">Cybersecurity</span><span class="pillar-tag" style="background:#fff0e8;color:var(--orange);">Young Tech Leaders</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 4: AUDIENCE -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-title">Who Will Be in the Room</div>
+    <div class="page-header-num">03</div>
+  </div>
+  <div class="page-body">
+    <div class="section-label reveal">The Audience</div>
+    <div class="section-title reveal">Every seat matters.<br>Every guest is selected.</div>
+    <div class="section-body reveal">The Sirocco Forum is not a public conference. Every participant is personally invited based on their relevance to the themes and their ability to contribute to — or benefit from — the conversations in the room. Approximately 20% of seats are reserved for young professionals under 35 from all three blocs — integrated directly into the main panels, not a side event.</div>
+    <div class="audience-grid reveal">
+      <div class="audience-card"><div class="audience-icon">🏛️</div><div class="audience-title">Ambassadors &amp; Diplomats</div><div class="audience-desc">Heads of mission and senior diplomatic staff from EU member states, African nations, and Mediterranean countries represented in Warsaw. Their presence signals the forum's strategic importance.</div></div>
+      <div class="audience-card"><div class="audience-icon">💼</div><div class="audience-title">Business Owners &amp; SMEs</div><div class="audience-desc">Founders and executives of companies with active or potential interests in EU-Africa trade, energy supply, agri-tech, mining, or digital services. The forum creates direct B2B contact opportunities.</div></div>
+      <div class="audience-card"><div class="audience-icon">🌍</div><div class="audience-title">NGOs &amp; Think Tanks</div><div class="audience-desc">Senior representatives of development organizations, policy institutes, and civil society groups working on Euro-African relations, energy transition, and regional integration.</div></div>
+      <div class="audience-card"><div class="audience-icon">🎓</div><div class="audience-title">Academics &amp; Researchers</div><div class="audience-desc">Faculty and researchers from the College of Europe, University of Warsaw, and partner institutions with expertise in geopolitics, energy policy, African studies, and international economics.</div></div>
+      <div class="audience-card" style="grid-column:1/-1;display:grid;grid-template-columns:3px 1fr;gap:5mm;align-items:start;">
+        <div style="background:var(--orange);border-radius:2px;"></div>
+        <div><div style="font-size:20px;margin-bottom:3mm;">🌱</div><div class="audience-title">Young Professionals Under 35</div><div class="audience-desc">Around 20% of all seats are reserved for young entrepreneurs, researchers, and policy professionals from the EU, the Mediterranean, and Africa. They sit on the main panels alongside senior figures — as equals. The role of local authorities and city-to-city cooperation will be the central theme of the <strong>Sirocco Forum Edition Two (2027)</strong>.</div></div>
+      </div>
+    </div>
+    <div class="quote-block reveal">
+      <span class="quote-mark">"</span>
+      <div class="quote-text">For the price of a business lunch, your organisation sits in the same room as ambassadors, think tank directors, young entrepreneurs, and business leaders from three continents. That is not an advertisement — that is access.</div>
+      <div class="quote-attr">— The Sirocco Forum, Partnership Prospectus 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 5: TIERS -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-title">Partnership Opportunities</div>
+    <div class="page-header-num">04</div>
+  </div>
+  <div class="page-body">
+    <div class="section-label reveal">Become a Partner</div>
+    <div class="section-title reveal">Choose the level that<br>works for your organisation</div>
+    <div class="section-body reveal">We offer four partnership tiers designed to accommodate organisations of different sizes and interests — from founding corporate partners to media organisations and academic institutions. All partners are publicly acknowledged as builders of the Sirocco Forum.</div>
+    <div class="tier-cards">
+      <div class="tier-card tier-founding">
+        <div class="tier-label-col"><div class="tier-name">Founding Partner</div><div class="tier-amount">€2,000–3,000</div></div>
+        <div class="tier-benefits">
+          <div class="tier-benefit">Prominent logo on all printed and digital materials</div>
+          <div class="tier-benefit">3 VIP invitations to the forum and networking lunch</div>
+          <div class="tier-benefit">Named acknowledgment in the Chairman's opening remarks</div>
+          <div class="tier-benefit">Credited in the Joint Communiqué distributed post-event</div>
+          <div class="tier-benefit">Priority access to the optional evening dinner</div>
+        </div>
+        <div class="tier-targets"><div class="tier-targets-label">Ideal For</div><div class="tier-target">Algerian-owned businesses in Poland</div><div class="tier-target">Law firms with Africa desks</div><div class="tier-target">International NGOs</div></div>
+      </div>
+      <div class="tier-card tier-supporting">
+        <div class="tier-label-col"><div class="tier-name">Supporting Partner</div><div class="tier-amount">€500–1,000</div></div>
+        <div class="tier-benefits">
+          <div class="tier-benefit">Logo on event program and at venue</div>
+          <div class="tier-benefit">2 VIP invitations to the forum and networking lunch</div>
+          <div class="tier-benefit">Social media acknowledgment before and after the event</div>
+          <div class="tier-benefit">Access to post-event participant directory (with consent)</div>
+        </div>
+        <div class="tier-targets"><div class="tier-targets-label">Ideal For</div><div class="tier-target">Consulting firms</div><div class="tier-target">Diaspora associations</div><div class="tier-target">Academic departments</div></div>
+      </div>
+      <div class="tier-card tier-institutional">
+        <div class="tier-label-col"><div class="tier-name">Institutional Patron</div><div class="tier-amount">In-Kind</div></div>
+        <div class="tier-benefits">
+          <div class="tier-benefit">Listed as Institutional Patron on all communications</div>
+          <div class="tier-benefit">Speaking or moderating opportunity in one panel</div>
+          <div class="tier-benefit">Co-branding on the Joint Communiqué publication</div>
+          <div class="tier-benefit">Full access to post-event publications and reports</div>
+        </div>
+        <div class="tier-targets"><div class="tier-targets-label">Ideal For</div><div class="tier-target">Embassies &amp; missions</div><div class="tier-target">Think tanks &amp; foundations</div><div class="tier-target">Academic institutions</div></div>
+      </div>
+      <div class="tier-card tier-media">
+        <div class="tier-label-col"><div class="tier-name">Media Partner</div><div class="tier-amount">In-Kind</div></div>
+        <div class="tier-benefits">
+          <div class="tier-benefit">Exclusive media accreditation and press access</div>
+          <div class="tier-benefit">Priority interview access to keynote speakers</div>
+          <div class="tier-benefit">Logo on press materials and website press section</div>
+          <div class="tier-benefit">Advanced copy of the Joint Communiqué for publication</div>
+        </div>
+        <div class="tier-targets"><div class="tier-targets-label">Ideal For</div><div class="tier-target">News outlets &amp; magazines</div><div class="tier-target">Policy newsletters</div><div class="tier-target">Podcast &amp; media platforms</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 6: PROGRAM -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-title">Draft Program</div>
+    <div class="page-header-num">05</div>
+  </div>
+  <div class="page-body">
+    <div class="section-label reveal">June 18, 2026 · Warsaw</div>
+    <div class="section-title reveal">A day designed for<br>conversation, not presentations</div>
+    <div class="section-body reveal">The program maximises genuine dialogue and networking. Panels are concise and discussion-led. The networking lunch is the centrepiece of the day — unscripted, unrushed, and where the most valuable connections are made.</div>
+    <table class="program-table reveal">
+      <thead><tr><th style="width:20mm;">Time</th><th style="width:48mm;">Session</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td class="time-col">09:00–09:30</td><td class="session-col">Registration &amp; Welcome Coffee</td><td>Guests arrive, informal networking, badge collection</td></tr>
+        <tr><td class="time-col">09:30–09:50</td><td class="session-col">Opening Remarks</td><td>Chairman's welcome. Brief keynote address setting the strategic context.</td></tr>
+        <tr><td class="time-col">10:00–11:15</td><td class="session-col">Panel I · Energy &amp; The Green Transition</td><td>Moderated discussion with 3–4 panelists including one young professional. Q&amp;A included.</td></tr>
+        <tr><td class="time-col">11:15–11:30</td><td class="session-col">Coffee Break</td><td>Informal networking between sessions</td></tr>
+        <tr><td class="time-col">11:30–12:45</td><td class="session-col">Panel II · Trade, Investment &amp; Digital Economy</td><td>Practical discussion on business opportunities, diaspora economy, and digital cooperation. One young voice on panel. Q&amp;A included.</td></tr>
+        <tr><td class="time-col">12:45–13:00</td><td class="session-col">Closing &amp; Communiqué Preview</td><td>Chairman presents the main points of the Joint Communiqué to be circulated after the event.</td></tr>
+        <tr><td class="time-col">13:00–14:30</td><td class="session-col">Networking Lunch</td><td>Seated lunch for all guests. No speeches. The most important part of the day for relationship-building.</td></tr>
+        <tr><td class="time-col">19:00–21:00</td><td class="session-col">Evening Dinner · Founding Partners Only</td><td>Private dinner for 20–30 key guests including ambassadors, lead speakers, and founding partners.</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:6mm;padding:5mm;background:var(--sand);border-radius:6px;display:flex;align-items:center;gap:5mm;" class="reveal">
+      <div style="width:3px;height:30px;background:var(--orange);border-radius:2px;flex-shrink:0;"></div>
+      <div>
+        <div style="font-family:'Outfit',sans-serif;font-size:8px;font-weight:600;letter-spacing:1.5px;color:var(--orange);text-transform:uppercase;margin-bottom:1mm;">Post-Event Output</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:9.5px;font-weight:300;color:#4a5568;line-height:1.5;">A <strong style="color:var(--navy);">Joint Communiqué</strong> — a concise, factual summary of the key recommendations from each session — will be drafted and distributed to all participants and relevant institutions within two weeks of the event.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 7: CONTACT -->
+<div class="page contact-page">
+  <div class="contact-top">
+    <div class="contact-pre reveal">Get Involved</div>
+    <div class="contact-title reveal">Ready to<br>join the room?</div>
+    <div class="contact-body reveal">Whether you are interested in a formal partnership, a seat at the table, or simply learning more about the Sirocco Forum, we welcome every conversation. Reach out directly to the Chairman to discuss how your organisation can be part of this inaugural edition.</div>
+    <div class="contact-divider reveal"></div>
+  </div>
+  <div class="contact-cards">
+    <div class="contact-card"><div class="contact-card-label">Chairman &amp; Founder</div><div class="contact-card-value">Akram Yahiaoui</div></div>
+    <div class="contact-card"><div class="contact-card-label">Email</div><div class="contact-card-value">chairman@thesiroccoForum.org</div></div>
+    <div class="contact-card"><div class="contact-card-label">Website</div><div class="contact-card-value">www.thesiroccoForum.org</div></div>
+    <div class="contact-card"><div class="contact-card-label">Location</div><div class="contact-card-value">Natolin Campus<br>College of Europe, Warsaw</div></div>
+  </div>
+  <div class="contact-bottom">
+    <div>
+      <div class="contact-brand">The <span>Sirocco</span> Forum</div>
+      <div class="contact-tagline" style="margin-top:1mm;">Warsaw Edition 2026</div>
+    </div>
+    <div style="text-align:right;">
+      <div class="contact-tagline">Where Africa's Energy Meets Europe's Future</div>
+      <div class="contact-tagline" style="margin-top:1mm;">EU · Mediterranean · Africa</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Cover load animation
+window.addEventListener('load', () => {
+  setTimeout(() => document.getElementById('cover').classList.add('loaded'), 100);
+});
+
+// Scroll progress bar
+const bar = document.getElementById('progressBar');
+window.addEventListener('scroll', () => {
+  const p = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+  bar.style.width = p + '%';
+}, {passive:true});
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, {threshold:0.1, rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal,.reveal-left').forEach(el => obs.observe(el));
+
+// Staggered pillar cards
+const pillars = document.querySelectorAll('.pillar-card');
+pillars.forEach(c => { c.style.opacity='0'; c.style.transform='translateY(20px)'; });
+const po = new IntersectionObserver(entries => {
+  if(entries[0].isIntersecting){
+    pillars.forEach((c,i) => setTimeout(() => { c.style.opacity='1'; c.style.transform='none'; c.style.transition='opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease, border-color 0.3s ease'; }, i*120));
+    po.disconnect();
+  }
+}, {threshold:0.05});
+if(pillars.length) po.observe(pillars[0]);
+
+// Staggered audience cards
+const aud = document.querySelectorAll('.audience-card');
+aud.forEach(c => { c.style.opacity='0'; c.style.transform='translateY(16px)'; });
+const ao = new IntersectionObserver(entries => {
+  if(entries[0].isIntersecting){
+    aud.forEach((c,i) => setTimeout(() => { c.style.opacity='1'; c.style.transform='none'; c.style.transition='opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease'; }, i*90));
+    ao.disconnect();
+  }
+}, {threshold:0.05});
+if(aud.length) ao.observe(aud[0]);
+
+// Staggered tier cards
+const tiers = document.querySelectorAll('.tier-card');
+tiers.forEach(c => { c.style.opacity='0'; c.style.transform='translateX(-16px)'; });
+const to = new IntersectionObserver(entries => {
+  if(entries[0].isIntersecting){
+    tiers.forEach((c,i) => setTimeout(() => { c.style.opacity='1'; c.style.transform='none'; c.style.transition='opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease'; }, i*100));
+    to.disconnect();
+  }
+}, {threshold:0.05});
+if(tiers.length) to.observe(tiers[0]);
+
+// Staggered program rows
+const rows = document.querySelectorAll('.program-table tbody tr');
+rows.forEach(r => { r.style.opacity='0'; r.style.transform='translateX(-8px)'; });
+const ro = new IntersectionObserver(entries => {
+  if(entries[0].isIntersecting){
+    rows.forEach((r,i) => setTimeout(() => { r.style.opacity='1'; r.style.transform='none'; r.style.transition='opacity 0.4s ease, transform 0.4s ease, background 0.2s ease'; }, i*60));
+    ro.disconnect();
+  }
+}, {threshold:0.05});
+if(rows.length) ro.observe(rows[0]);
+
+// Staggered contact cards
+const cc = document.querySelectorAll('.contact-card');
+cc.forEach(c => { c.style.opacity='0'; c.style.transform='translateY(12px)'; });
+const co = new IntersectionObserver(entries => {
+  if(entries[0].isIntersecting){
+    cc.forEach((c,i) => setTimeout(() => { c.style.opacity='1'; c.style.transform='none'; c.style.transition='opacity 0.5s ease, transform 0.5s ease, background 0.3s ease, border-color 0.3s ease, transform 0.3s ease'; }, i*100));
+    co.disconnect();
+  }
+}, {threshold:0.05});
+if(cc.length) co.observe(cc[0]);
+
+// Cursor glow on dark pages
+const glow = document.getElementById('cursorGlow');
+document.addEventListener('mousemove', e => {
+  const t = e.target.closest('.cover,.contact-page');
+  glow.style.opacity = t ? '1' : '0';
+  glow.style.left = e.clientX + 'px';
+  glow.style.top = e.clientY + 'px';
+});
+</script>
+</body>
+</html>
